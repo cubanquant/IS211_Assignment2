@@ -5,10 +5,13 @@ import datetime
 
 def downloadData(url):
     """Downloads the data"""
-    pass
+    req = urllib.request.Request(url)
+    with urllib.request.urlopen(req) as response:
+        file_content = response.read()
 
 def processData(file_content):
-    pass
+    for line in file_content:
+        print(line)
 
 
 def displayPerson(id, personData):
